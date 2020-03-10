@@ -16,6 +16,7 @@ class BlogRoll extends React.Component {
             <div key={post.id}>
               <article>
                 <Link to={post.fields.slug} css={css`
+                  position: relative;
                   color: #222;
                   text-decoration: none;
                   box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
@@ -29,12 +30,26 @@ class BlogRoll extends React.Component {
                     box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
                   }
                 `}>
-                  <div className='flex items-center justify-between'>
+                  <div css={css`
+                    position: absolute;
+                    top: 50%;
+                    left: -18px;
+                    transform: translateY(-50%);
+                    height: 40px;
+                    width: 40px;
+                    border-radius: 20px;
+                    color: white;
+                    background:  rgb(142,20,94);
+                    text-align: center;
+                    line-height: 40px;
+                  `}>
+                    <strong>{post.frontmatter.number}</strong>
+                  </div>
+                  <div className='flex items-center justify-between pl2'>
                     <strong>{post.frontmatter.title}</strong>
                     <small>{post.frontmatter.date}</small>
                   </div>
                 </Link>
-
               </article>
             </div>
           ))}
@@ -68,6 +83,7 @@ export default () => (
               }
               frontmatter {
                 title
+                number
                 templateKey
                 date(formatString: "MMMM DD, YYYY")
                 featuredpost

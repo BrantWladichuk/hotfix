@@ -4,10 +4,15 @@ import Footer from '../components/Footer'
 import Navbar from '../components/Navbar'
 import useSiteMetadata from './SiteMetadata'
 import { withPrefix } from 'gatsby'
+import styled from '@emotion/styled'
 
 import '../sass/reset.css'
 import 'basscss/css/basscss.css'
 import '../sass/all.sass'
+
+const Container = styled.div`
+  min-height: 100vh;
+`
 
 const TemplateWrapper = ({ children }) => {
   const { title, description } = useSiteMetadata()
@@ -52,8 +57,10 @@ const TemplateWrapper = ({ children }) => {
         />
       </Helmet>
       <Navbar />
-      <div>{children}</div>
-      {/* <Footer /> */}
+      <Container>
+        {children}
+      </Container>
+      <Footer />
     </div>
   )
 }

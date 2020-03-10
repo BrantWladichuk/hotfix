@@ -3,8 +3,34 @@ import PropTypes from 'prop-types'
 import { kebabCase } from 'lodash'
 import Helmet from 'react-helmet'
 import { graphql, Link } from 'gatsby'
-import Layout from '../components/Layout'
 import Content, { HTMLContent } from '../components/Content'
+import Hero from '../components/Hero'
+import Layout from '../components/Layout'
+import styled from '@emotion/styled'
+
+const VideoContainer = styled.div`
+  overflow:hidden;
+  padding-bottom:56.25%;
+  position:relative;
+  height:0;
+  border-radius: 20px;
+  transform: translateY(-60px);
+  box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+`
+
+const Video = styled.iframe`
+  left:0;
+  top:0;
+  height:100%;
+  width:100%;
+  position:absolute;
+`
+
+const Description = styled.p`
+  text-align: center;
+  font-size: 1.2em;
+  padding: 20px 0 20px 0;
+`
 
 export const BlogPostTemplate = ({
   content,
@@ -12,24 +38,27 @@ export const BlogPostTemplate = ({
   description,
   title,
   helmet,
+  number,
+  youtube
 }) => {
   const PostContent = contentComponent || Content
 
   return (
-    <section className="section">
-      {helmet || ''}
-      <div className="container content">
-        <div className="columns">
-          <div className="column is-10 is-offset-1">
-            <h1 className="title is-size-2 has-text-weight-bold is-bold-light">
-              {title}
-            </h1>
-            <p>{description}</p>
-            <PostContent content={content} />
-          </div>
-        </div>
+    <Layout>
+      <Hero title={'Episode ' + number} subheading={title} />
+      <div className='max-width-4 mx-auto'>
+        <VideoContainer>
+          <Video
+            src={"https://www.youtube.com/embed/" + youtube}
+            frameborder="0" 
+            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" 
+            allowfullscreen />
+        </VideoContainer>
+        <Description>
+          {description}
+        </Description>
       </div>
-    </section>
+    </Layout>
   )
 }
 
@@ -39,6 +68,8 @@ BlogPostTemplate.propTypes = {
   description: PropTypes.string,
   title: PropTypes.string,
   helmet: PropTypes.object,
+  number: PropTypes.string,
+  youtube: PropTypes.string
 }
 
 const BlogPost = ({ data }) => {
@@ -60,6 +91,8 @@ const BlogPost = ({ data }) => {
           </Helmet>
         }
         title={post.frontmatter.title}
+        number={post.frontmatter.number}
+        youtube={post.frontmatter.youtube}
       />
     </Layout>
   )
@@ -81,7 +114,9 @@ export const pageQuery = graphql`
       frontmatter {
         date(formatString: "MMMM DD, YYYY")
         title
-        description
+        description,
+        number,
+        youtube
       }
     }
   }
