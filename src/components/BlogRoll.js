@@ -15,7 +15,6 @@ class BlogRoll extends React.Component {
           posts.map(({ node: post }) => (
             <div key={post.id}>
               <article>
-
                 <Link to={post.fields.slug} css={css`
                   color: #222;
                   text-decoration: none;
@@ -72,13 +71,6 @@ export default () => (
                 templateKey
                 date(formatString: "MMMM DD, YYYY")
                 featuredpost
-                featuredimage {
-                  childImageSharp {
-                    fluid(maxWidth: 120, quality: 100) {
-                      ...GatsbyImageSharpFluid
-                    }
-                  }
-                }
               }
             }
           }
