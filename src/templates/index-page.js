@@ -1,38 +1,30 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { Link, graphql } from 'gatsby'
-
 import Layout from '../components/Layout'
 import BlogRoll from '../components/BlogRoll'
-
 import Hero from '../components/Hero'
+import Helmet from 'react-helmet'
 
 export const IndexPageTemplate = ({
-  image,
-  title,
   heading,
   subheading,
-  mainpitch,
-  description,
-  intro,
+  helmet
 }) => (
   <div>
+    {helmet || ''}
     <Hero title={heading} subheading={subheading} />
     <div className="max-width-4 mx-auto pt3">
-      <h2>{mainpitch.title}</h2>
-      <p>{mainpitch.description}</p>
+      <h2>Episodes</h2>
       <BlogRoll />
     </div>
-
   </div>
 )
 
 IndexPageTemplate.propTypes = {
-  title: PropTypes.string,
   heading: PropTypes.string,
   subheading: PropTypes.string,
-  mainpitch: PropTypes.object,
-  description: PropTypes.string,
+  helmet: PropTypes.object,
 }
 
 const IndexPage = ({ data }) => {
@@ -41,11 +33,17 @@ const IndexPage = ({ data }) => {
   return (
     <Layout>
       <IndexPageTemplate
-        title={frontmatter.title}
         heading={frontmatter.heading}
         subheading={frontmatter.subheading}
-        mainpitch={frontmatter.mainpitch}
-        description={frontmatter.description}
+        helmet={
+          <Helmet titleTemplate="%s | Hotfix Podcast">
+            <title>{`${frontmatter.title}`}</title>
+            <meta
+              name="description"
+              content={`${frontmatter.description}`}
+            />
+          </Helmet>
+        }
       />
     </Layout>
   )
@@ -65,13 +63,9 @@ export const pageQuery = graphql`
   query IndexPageTemplate {
     markdownRemark(frontmatter: { templateKey: { eq: "index-page" } }) {
       frontmatter {
-        title
         heading
-        subheading
-        mainpitch {
-          title
-          description
-        }
+        subheading,
+        title,
         description
       }
     }
