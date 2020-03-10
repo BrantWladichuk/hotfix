@@ -25,14 +25,14 @@ const Subtitle = styled.h1`
   color: white;
 `
 
-const Hero = () =>
+const Hero = ({ title, subheading }) =>
   <Wrap className='flex items-center justify-center'>
     <div>
       <Title className='center mb1'>
-        Welcome to Hotfix
+        {title}
       </Title>
       <Subtitle className='center'>
-        A podcast geared towards Streaming, eSports and Gaming in general.
+        {subheading}
       </Subtitle>
     </div>
   </Wrap>

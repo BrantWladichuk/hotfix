@@ -18,10 +18,14 @@ export const IndexPageTemplate = ({
   intro,
 }) => (
   <div>
-    <Hero />
-    <div className="center pt4">
-      COMING SOON...
+    <Hero title={title} subheading={subheading} />
+
+    <div className="max-width-4 mx-auto pt3">
+      <h2>{mainpitch.title}</h2>
+      <p>{mainpitch.description}</p>
+      <BlogRoll />
     </div>
+
   </div>
   // <div>
   //   <div
