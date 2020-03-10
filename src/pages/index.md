@@ -1,9 +1,11 @@
 ---
 templateKey: index-page
-title: Great coffee with a conscience
+title: Welcome to Hotfix
 image: /img/home-jumbotron.jpg
-heading: Great coffee with a conscience
-subheading: Support sustainable farming while enjoying a cup
+heading: Welcome to Hotfix
+subheading: >-
+  A weekly podcast that explores the fascinating world of Streaming, eSports and
+  Gaming
 mainpitch:
   title: Why Kaldi
   description: >
