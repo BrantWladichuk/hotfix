@@ -1,10 +1,11 @@
 ---
 templateKey: blog-post
-title: '#1 - Introduction Episode | Welcome to Hotfix'
+number: '1'
+title: Introduction Episode | Welcome to Hotfix
 date: 2020-03-10T18:11:58.883Z
-description: '#1 - Introduction Episode | Welcome to Hotfix'
+description: Introduction Episode | Welcome to Hotfix
 featuredpost: true
-youtube: 'https://youtube.com'
+youtube: e8iAzMNaQ1g
 spotify: 'https://spotify.com'
 apple: 'https://apple.com'
 more: 'http://anchor.fm'
