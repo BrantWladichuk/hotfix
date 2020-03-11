@@ -16,6 +16,7 @@ const VideoContainer = styled.div`
   border-radius: 20px;
   transform: translateY(-60px);
   box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+  background: #fff;
 `
 
 const Video = styled.iframe`
@@ -28,8 +29,51 @@ const Video = styled.iframe`
 
 const Description = styled.p`
   text-align: center;
-  font-size: 1.2em;
   padding: 20px 0 20px 0;
+  margin-bottom: 80px;
+`
+
+const Where = styled.div`
+  margin-bottom: 100px;
+  text-align: center;
+`
+
+const ServiceButton = styled.a`
+  position: relative;
+  display: inline-block;
+  width: 150px;
+  height: 150px;
+  background: #fff;
+  color: #000;
+  text-decoration: none;
+  text-align: center;
+  border-radius: 10px;
+  margin: 6px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+  transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+  &:hover {
+    box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+  }
+`
+const ServiceButtonInner = styled.div`
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  i {
+    font-size: 3em;
+    margin-bottom: 10px;
+  }
+
+  span {
+    display: block;
+  }
+`
+
+const Title = styled.h2`
+  font-size: 2em;
+  text-transform: uppercase;
 `
 
 export const BlogPostTemplate = ({
@@ -44,7 +88,8 @@ export const BlogPostTemplate = ({
   const PostContent = contentComponent || Content
 
   return (
-    <Layout>
+    <div>
+      {helmet}
       <Hero title={'Episode ' + number} subheading={title} />
       <div className='max-width-4 mx-auto'>
         <VideoContainer>
@@ -55,10 +100,43 @@ export const BlogPostTemplate = ({
             allowfullscreen />
         </VideoContainer>
         <Description>
+          <Title>Description</Title>
           {description}
         </Description>
+
+        <Where>
+          <Title>Listen on</Title>
+
+          <ServiceButton href="#">
+            <ServiceButtonInner>
+              <i className="fab fa-spotify" style={{ color: '#1DB954' }}></i>
+              <span>Spotify</span>
+            </ServiceButtonInner>
+          </ServiceButton>
+
+          <ServiceButton href="#">
+            <ServiceButtonInner>
+              <i className="fas fa-podcast" style={{ color: '#873cc1' }}></i>
+              <span>Apple</span>
+            </ServiceButtonInner>
+          </ServiceButton>
+
+          <ServiceButton href="#">
+            <ServiceButtonInner>
+              <i className="fab fa-youtube" style={{ color: '#FF0000' }}></i>
+              <span>Youtube</span>
+            </ServiceButtonInner>
+          </ServiceButton>
+
+          <ServiceButton href="#">
+            <ServiceButtonInner>
+              <i className="fas fa-headphones"></i>
+              <span>More...</span>
+            </ServiceButtonInner>
+          </ServiceButton>
+        </Where>
       </div>
-    </Layout>
+    </div>
   )
 }
 

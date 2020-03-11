@@ -5,7 +5,6 @@ import Navbar from '../components/Navbar'
 import useSiteMetadata from './SiteMetadata'
 import { withPrefix } from 'gatsby'
 import styled from '@emotion/styled'
-
 import '../sass/reset.css'
 import 'basscss/css/basscss.css'
 import '../sass/all.sass'
@@ -55,6 +54,7 @@ const TemplateWrapper = ({ children }) => {
           property="og:image"
           content={`${withPrefix('/')}img/og-image.jpg`}
         />
+        <script src="https://kit.fontawesome.com/52a2cd3c92.js" crossorigin="anonymous"></script>
       </Helmet>
       <Navbar />
       <Container>
