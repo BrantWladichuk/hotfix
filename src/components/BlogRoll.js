@@ -10,7 +10,7 @@ class BlogRoll extends React.Component {
     const { edges: posts } = data.allMarkdownRemark
 
     return (
-      <div className="e">
+      <div>
         {posts &&
           posts.map(({ node: post }) => (
             <div key={post.id}>

@@ -1,10 +1,14 @@
 import React from 'react'
 import styled from '@emotion/styled'
+import BG from '../../public/img/hotfix/arcade_bg.jpg'
 
 const Wrap = styled.div`
-  height: 400px;
-  background: rgb(142,20,94);
-  background: linear-gradient(128deg, rgba(142,20,94,1) 0%, rgba(26,0,51,1) 100%);
+  height: 500px;
+  // background: rgb(142,20,94);
+  // background: linear-gradient(128deg, rgba(142,20,94,1) 0%, rgba(26,0,51,1) 100%);
+  background-image: url(${BG});
+  background-size: cover;
+  background-position: center center;
 `
 
 const Title = styled.h1`

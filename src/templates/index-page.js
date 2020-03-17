@@ -14,7 +14,7 @@ export const IndexPageTemplate = ({
   <div>
     {helmet || ''}
     <Hero title={heading} subheading={subheading} />
-    <div className="max-width-4 mx-auto pt3">
+    <div className="max-width-4 mx-auto pt3 px3">
       <h2>Episodes</h2>
       <BlogRoll />
     </div>

@@ -38,7 +38,7 @@ const Navbar = class extends React.Component {
             </div>
             <div>
               <Link to='/'>Home</Link>
-              <Link to='/about' style={{ marginLeft: '20px', marginRight: '10px' }}>About</Link>
+              {/* <Link to='/about' style={{ marginLeft: '20px', marginRight: '10px' }}>About</Link> */}
             </div>
           </Nav>
         </Headroom>
