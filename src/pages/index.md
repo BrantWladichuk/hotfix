@@ -4,7 +4,7 @@ title: Welcome to Hotfix
 heading: Welcome to Hotfix
 subheading: >-
   A weekly podcast that explores the fascinating world of Streaming, eSports and
-  Gaming
+  Gaming | COMING SOON
 mainpitch:
   title: Why Kaldi
   description: >
