@@ -1,10 +1,10 @@
 ---
 templateKey: index-page
 title: Welcome to Hotfix
-heading: Welcome to Hotfix
+heading: Welcome to Hotfix // COMING SOON
 subheading: >-
   A weekly podcast that explores the fascinating world of Streaming, eSports and
-  Gaming | COMING SOON
+  Gaming
 mainpitch:
   title: Why Kaldi
   description: >
