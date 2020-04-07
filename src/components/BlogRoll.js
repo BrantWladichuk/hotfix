@@ -8,7 +8,6 @@ class BlogRoll extends React.Component {
   render() {
     const { data } = this.props
     const { edges: posts } = data.allMarkdownRemark
-
     return (
       <div>
         {posts &&
@@ -21,7 +20,6 @@ class BlogRoll extends React.Component {
                   text-decoration: none;
                   box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
                   transition: all 0.3s cubic-bezier(.25,.8,.25,1);
-                  padding: 20px;
                   display: block;
                   border-radius: 5px;
                   margin-bottom: 20px;
@@ -30,23 +28,14 @@ class BlogRoll extends React.Component {
                     box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
                   }
                 `}>
-                  <div css={css`
-                    position: absolute;
-                    top: 50%;
-                    left: -18px;
-                    transform: translateY(-50%);
-                    height: 40px;
-                    width: 40px;
-                    border-radius: 20px;
-                    color: white;
-                    background:  rgb(142,20,94);
-                    text-align: center;
-                    line-height: 40px;
-                  `}>
-                    <strong>{post.frontmatter.number}</strong>
-                  </div>
-                  <div className='flex items-center justify-between pl2'>
-                    <strong>{post.frontmatter.title}</strong>
+                  <div className='flex items-center justify-between pr2'>
+                    <div className='flex items-center'>
+                      <img width="110" className='mr2' css={css`
+                        border-top-left-radius: 5px;
+                        border-bottom-left-radius: 5px;
+                      `}src={post.frontmatter.thumbnailimage.childImageSharp.fluid.src} />
+                      <strong>{post.frontmatter.title}</strong>
+                    </div>
                     <small>{post.frontmatter.date}</small>
                   </div>
                 </Link>
@@ -86,6 +75,13 @@ export default () => (
                 number
                 templateKey
                 date(formatString: "MMMM DD, YYYY")
+                thumbnailimage {
+                  childImageSharp {
+                    fluid(maxWidth: 200, quality: 75) {
+                      ...GatsbyImageSharpFluid
+                    }
+                  }
+                }
               }
             }
           }
