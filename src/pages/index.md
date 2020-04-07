@@ -1,7 +1,7 @@
 ---
 templateKey: index-page
 title: Welcome to Hotfix
-heading: Welcome to Hotfix // COMING SOON
+heading: Welcome to Hotfix
 subheading: >-
   A weekly podcast that explores the fascinating world of Streaming, eSports and
   Gaming
