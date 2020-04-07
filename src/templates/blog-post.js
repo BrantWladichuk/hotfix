@@ -71,7 +71,10 @@ const ServiceButtonInner = styled.div`
   }
 `
 
-const Title = styled.h2`
+const Title = styled.span`
+  display: block;
+  font-weight: 900;
+  margin-bottom: 20px;
   font-size: 2em;
   text-transform: uppercase;
 `
@@ -83,12 +86,12 @@ export const BlogPostTemplate = ({
   title,
   helmet,
   number,
-  youtube,
+  youtube_link,
   youtube_embed,
-  spotify,
-  apple,
-  anchor,
-  more
+  anchor_link,
+  anchor_embed,
+  spotify_link,
+  apple_podcasts_link
 }) => {
   const PostContent = contentComponent || Content
 
@@ -105,35 +108,35 @@ export const BlogPostTemplate = ({
             allowfullscreen />
         </VideoContainer>
         <Description>
-          <Title>Description</Title>
+          <Title className='h2'>Description</Title>
           {description}
         </Description>
 
         <Where>
           <Title>Listen on</Title>
 
-          <ServiceButton href={spotify}>
+          <ServiceButton href={spotify_link}>
             <ServiceButtonInner>
               <i className="fab fa-spotify" style={{ color: '#1DB954' }}></i>
               <span>Spotify</span>
             </ServiceButtonInner>
           </ServiceButton>
 
-          {/* <ServiceButton href={apple}>
+          {/* <ServiceButton href={apple_podcasts_link}>
             <ServiceButtonInner>
               <i className="fas fa-podcast" style={{ color: '#873cc1' }}></i>
               <span>Apple</span>
             </ServiceButtonInner>
           </ServiceButton> */}
 
-          <ServiceButton href={youtube}>
+          <ServiceButton href={youtube_link}>
             <ServiceButtonInner>
               <i className="fab fa-youtube" style={{ color: '#FF0000' }}></i>
               <span>Youtube</span>
             </ServiceButtonInner>
           </ServiceButton>
 
-          <ServiceButton href={more}>
+          <ServiceButton href={anchor_link}>
             <ServiceButtonInner>
               <i className="fas fa-headphones"></i>
               <span>More...</span>
@@ -199,12 +202,12 @@ export const pageQuery = graphql`
         title
         description,
         number,
-        youtube,
+        youtube_link,
         youtube_embed,
-        spotify,
-        apple,
-        anchor,
-        more
+        anchor_link,
+        anchor_embed,
+        spotify_link,
+        apple_podcasts_link
       }
     }
   }
