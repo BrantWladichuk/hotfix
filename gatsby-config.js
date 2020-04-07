@@ -3,8 +3,10 @@ module.exports = {
     title: 'Hotfix Podcast by Brant and Jeremy',
     description:
       'A weekly podcast that explores the fascinating world of Streaming, eSports and Gaming.',
+    siteUrl: 'https://hotfixpodcast.com'
   },
   plugins: [
+    'gatsby-plugin-sitemap',
     'gatsby-plugin-react-helmet',
     'gatsby-plugin-sass',
     {
