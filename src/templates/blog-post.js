@@ -1,8 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { kebabCase } from 'lodash'
 import Helmet from 'react-helmet'
-import { graphql, Link } from 'gatsby'
+import { graphql } from 'gatsby'
 import Content, { HTMLContent } from '../components/Content'
 import Hero from '../components/Hero'
 import Layout from '../components/Layout'
@@ -79,6 +78,18 @@ const Title = styled.span`
   text-transform: uppercase;
 `
 
+const AnchorEmbed = styled.iframe`
+  width: 100%;
+  height: 160px;
+  border-radius: 20px;
+  box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+  transform: translateY(-40px);
+  
+  @media (max-width: 800px) {
+    height: 98px;
+  }
+`
+
 export const BlogPostTemplate = ({
   content,
   contentComponent,
@@ -99,7 +110,7 @@ export const BlogPostTemplate = ({
     <div>
       {helmet}
       <Hero title={'Episode ' + number} subheading={title} />
-      <div className='max-width-4 mx-auto'>
+      <div className='max-width-4 mx-auto px2'>
         <VideoContainer>
           <Video
             src={youtube_embed}
@@ -107,6 +118,10 @@ export const BlogPostTemplate = ({
             allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" 
             allowfullscreen />
         </VideoContainer>
+
+
+        <AnchorEmbed src={anchor_embed} frameborder="0" scrolling="no"></AnchorEmbed>
+
         <Description>
           <Title className='h2'>Description</Title>
           {description}
@@ -115,7 +130,7 @@ export const BlogPostTemplate = ({
         <Where>
           <Title>Listen on</Title>
 
-          <ServiceButton href={spotify_link}>
+          <ServiceButton href={spotify_link} target='_blank'>
             <ServiceButtonInner>
               <i className="fab fa-spotify" style={{ color: '#1DB954' }}></i>
               <span>Spotify</span>
@@ -129,14 +144,14 @@ export const BlogPostTemplate = ({
             </ServiceButtonInner>
           </ServiceButton> */}
 
-          <ServiceButton href={youtube_link}>
+          <ServiceButton href={youtube_link} target='_blank'>
             <ServiceButtonInner>
               <i className="fab fa-youtube" style={{ color: '#FF0000' }}></i>
               <span>Youtube</span>
             </ServiceButtonInner>
           </ServiceButton>
 
-          <ServiceButton href={anchor_link}>
+          <ServiceButton href={anchor_link} target='_blank'>
             <ServiceButtonInner>
               <i className="fas fa-headphones"></i>
               <span>More...</span>
@@ -179,6 +194,12 @@ const BlogPost = ({ data }) => {
         title={post.frontmatter.title}
         number={post.frontmatter.number}
         youtube={post.frontmatter.youtube}
+        youtube_link={post.frontmatter.youtube_link}
+        youtube_embed={post.frontmatter.youtube_embed}
+        anchor_link={post.frontmatter.anchor_link}
+        anchor_embed={post.frontmatter.anchor_embed}
+        spotify_link={post.frontmatter.spotify_link}
+        apple_podcasts_link={post.frontmatter.apple_podcasts_link}
       />
     </Layout>
   )
