@@ -83,7 +83,12 @@ export const BlogPostTemplate = ({
   title,
   helmet,
   number,
-  youtube
+  youtube,
+  youtube_embed,
+  spotify,
+  apple,
+  anchor,
+  more
 }) => {
   const PostContent = contentComponent || Content
 
@@ -94,7 +99,7 @@ export const BlogPostTemplate = ({
       <div className='max-width-4 mx-auto'>
         <VideoContainer>
           <Video
-            src={"https://www.youtube.com/embed/" + youtube}
+            src={youtube_embed}
             frameborder="0" 
             allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" 
             allowfullscreen />
@@ -107,28 +112,28 @@ export const BlogPostTemplate = ({
         <Where>
           <Title>Listen on</Title>
 
-          <ServiceButton href="#">
+          <ServiceButton href={spotify}>
             <ServiceButtonInner>
               <i className="fab fa-spotify" style={{ color: '#1DB954' }}></i>
               <span>Spotify</span>
             </ServiceButtonInner>
           </ServiceButton>
 
-          <ServiceButton href="#">
+          {/* <ServiceButton href={apple}>
             <ServiceButtonInner>
               <i className="fas fa-podcast" style={{ color: '#873cc1' }}></i>
               <span>Apple</span>
             </ServiceButtonInner>
-          </ServiceButton>
+          </ServiceButton> */}
 
-          <ServiceButton href="#">
+          <ServiceButton href={youtube}>
             <ServiceButtonInner>
               <i className="fab fa-youtube" style={{ color: '#FF0000' }}></i>
               <span>Youtube</span>
             </ServiceButtonInner>
           </ServiceButton>
 
-          <ServiceButton href="#">
+          <ServiceButton href={more}>
             <ServiceButtonInner>
               <i className="fas fa-headphones"></i>
               <span>More...</span>
@@ -194,7 +199,12 @@ export const pageQuery = graphql`
         title
         description,
         number,
-        youtube
+        youtube,
+        youtube_embed,
+        spotify,
+        apple,
+        anchor,
+        more
       }
     }
   }
