@@ -24,7 +24,6 @@ collections:
       - {label: "Publish Date", name: "date", widget: "datetime"}
       - {label: "Description", name: "description", widget: "text"}
       - {label: "Thumbnail Image", name: "thumbnailimage", widget: image}
-      - {label: "Featured Post", name: "featuredpost", widget: "boolean"}
       - {label: "Youtube Link", name: "youtube_link", widget: "string"}
       - {label: "Youtube Embed", name: "youtube_embed", widget: "string"}
       - {label: "Anchor Link", name: "anchor_link", widget: "string"}

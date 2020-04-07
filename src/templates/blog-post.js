@@ -6,6 +6,7 @@ import Content, { HTMLContent } from '../components/Content'
 import Hero from '../components/Hero'
 import Layout from '../components/Layout'
 import styled from '@emotion/styled'
+import { withPrefix } from 'gatsby'
 
 const VideoContainer = styled.div`
   overflow:hidden;
@@ -175,7 +176,6 @@ BlogPostTemplate.propTypes = {
 
 const BlogPost = ({ data }) => {
   const { markdownRemark: post } = data
-
   return (
     <Layout>
       <BlogPostTemplate
@@ -183,12 +183,17 @@ const BlogPost = ({ data }) => {
         contentComponent={HTMLContent}
         description={post.frontmatter.description}
         helmet={
-          <Helmet titleTemplate="%s | Blog">
-            <title>{`${post.frontmatter.title}`}</title>
-            <meta
-              name="description"
-              content={`${post.frontmatter.description}`}
-            />
+          <Helmet titleTemplate="%s">
+            <title>{post.frontmatter.title + ` | Hotfix Podcast`}</title>
+            <meta name="description" content={post.frontmatter.description} />
+            <meta property="og:title" content={post.frontmatter.title + ` | Hotfix Podcast`} />
+            <meta property="og:description" content={post.frontmatter.description} />
+            <meta property="og:image" content={`https://hotfixpodcast.com${post.frontmatter.thumbnailimage.childImageSharp.resize.src}`} />
+            <meta property="og:url" content={`https://hotfixpodcast.com${post.fields.slug}`} />
+            <meta name="twitter:title" content={post.frontmatter.title + ` | Hotfix Podcast`} />
+            <meta name="twitter:description" content={post.frontmatter.description} />
+            <meta name="twitter:image" content={`https://hotfixpodcast.com${post.frontmatter.thumbnailimage.childImageSharp.resize.src}`} />
+            <meta name="twitter:card" content="summary_large_image" />
           </Helmet>
         }
         title={post.frontmatter.title}
@@ -218,17 +223,29 @@ export const pageQuery = graphql`
     markdownRemark(id: { eq: $id }) {
       id
       html
+      fields {
+        slug
+      }
       frontmatter {
         date(formatString: "MMMM DD, YYYY")
         title
-        description,
-        number,
-        youtube_link,
-        youtube_embed,
-        anchor_link,
-        anchor_embed,
-        spotify_link,
+        description
+        number
+        youtube_link
+        youtube_embed
+        anchor_link
+        anchor_embed
+        spotify_link
         apple_podcasts_link
+        thumbnailimage {
+          childImageSharp {
+            resize(width: 1200, height: 630, quality: 75) {
+              src
+              width
+              height
+            }
+          }
+        }
       }
     }
   }

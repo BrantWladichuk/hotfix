@@ -86,7 +86,6 @@ export default () => (
                 number
                 templateKey
                 date(formatString: "MMMM DD, YYYY")
-                featuredpost
               }
             }
           }
