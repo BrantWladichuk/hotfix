@@ -6,6 +6,7 @@ date: 2020-03-10T18:11:58.883Z
 description: >-
   In the first episode of Hotfix, Brant & Jeremy discuss the plans for the show
   and give a general overview of what you can expect!
+thumbnailimage: /img/ep1.jpg
 featuredpost: true
 youtube_link: 'https://www.youtube.com/watch?v=ZbyQ3aMW8IU'
 youtube_embed: 'https://www.youtube.com/embed/ZbyQ3aMW8IU'
