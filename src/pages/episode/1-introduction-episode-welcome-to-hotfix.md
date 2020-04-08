@@ -2,7 +2,7 @@
 templateKey: blog-post
 number: '1'
 title: Introduction Episode | Welcome to Hotfix
-date: 2020-03-10T18:11:58.883Z
+date: 2020-04-06T13:00:58.883Z
 description: >-
   In the first episode of Hotfix, Brant & Jeremy discuss the plans for the show
   and give a general overview of what you can expect!
