@@ -16,5 +16,5 @@ anchor_embed: >-
 spotify_link: >-
   https://open.spotify.com/episode/7BDVrIvU0YeFIPtbZ2T3rb?si=F1ZoVB-qQaGN0be6-i3xBw
 apple_podcasts_link: >-
-  https://open.spotify.com/episode/7BDVrIvU0YeFIPtbZ2T3rb?si=F1ZoVB-qQaGN0be6-i3xBw
+  https://podcasts.apple.com/ca/podcast/things-to-consider-before-you-start-streaming/id1509473966?i=1000472290809
 ---
