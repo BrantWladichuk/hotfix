@@ -34,7 +34,7 @@ const Description = styled.p`
 `
 
 const Where = styled.div`
-  margin-bottom: 100px;
+  margin-bottom: 50px;
   text-align: center;
 `
 
@@ -91,6 +91,14 @@ const AnchorEmbed = styled.iframe`
   }
 `
 
+const Share = styled.div`
+  margin-bottom: 20px;
+`
+
+const Reaction = styled.div`
+  margin-bottom: 100px;
+`
+
 export const BlogPostTemplate = ({
   content,
   contentComponent,
@@ -138,12 +146,12 @@ export const BlogPostTemplate = ({
             </ServiceButtonInner>
           </ServiceButton>
 
-          {/* <ServiceButton href={apple_podcasts_link}>
+          <ServiceButton href={apple_podcasts_link} target='_blank'>
             <ServiceButtonInner>
               <i className="fas fa-podcast" style={{ color: '#873cc1' }}></i>
               <span>Apple</span>
             </ServiceButtonInner>
-          </ServiceButton> */}
+          </ServiceButton>
 
           <ServiceButton href={youtube_link} target='_blank'>
             <ServiceButtonInner>
@@ -159,6 +167,13 @@ export const BlogPostTemplate = ({
             </ServiceButtonInner>
           </ServiceButton>
         </Where>
+
+        <Share>
+          <div className="sharethis-inline-share-buttons"></div>
+        </Share>
+        <Reaction>
+          <div className="sharethis-inline-reaction-buttons"></div>
+        </Reaction>
       </div>
     </div>
   )
