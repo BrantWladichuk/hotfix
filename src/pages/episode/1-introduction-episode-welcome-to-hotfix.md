@@ -13,5 +13,6 @@ anchor_link: 'https://anchor.fm/hotfix/episodes/Hotfix-Introductory-Episode-ec8t
 anchor_embed: >-
   https://anchor.fm/hotfix/embed/episodes/Hotfix-Introductory-Episode-ec8tvb/a-a1r2p4s
 spotify_link: 'https://open.spotify.com/show/2nV0OF4lYdaWZGxtqJYtH1'
-apple_podcasts_link: 'https://open.spotify.com/show/2nV0OF4lYdaWZGxtqJYtH1'
+apple_podcasts_link: >-
+  https://podcasts.apple.com/ca/podcast/hotfix-introductory-episode/id1509473966?i=1000472290808
 ---
