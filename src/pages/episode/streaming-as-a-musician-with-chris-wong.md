@@ -19,5 +19,5 @@ anchor_embed: >-
 spotify_link: >-
   https://open.spotify.com/episode/1zEZ7sCSeM7q35SohAmvFW?si=2V9EaMsFRBimT6_8o5KaLQ
 apple_podcasts_link: >-
-  https://open.spotify.com/episode/1zEZ7sCSeM7q35SohAmvFW?si=2V9EaMsFRBimT6_8o5KaLQ
+  https://podcasts.apple.com/ca/podcast/streaming-as-a-musician-with-chris-wong/id1509473966?i=1000472786176
 ---
