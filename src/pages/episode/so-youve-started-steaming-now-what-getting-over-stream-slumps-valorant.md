@@ -18,5 +18,5 @@ anchor_embed: >-
 spotify_link: >-
   https://open.spotify.com/episode/5NXrTDu2RTmAQE0ZBHMRZ5?si=xrRvNG3wT3aDh9n7GpyQcA
 apple_podcasts_link: >-
-  https://open.spotify.com/episode/5NXrTDu2RTmAQE0ZBHMRZ5?si=xrRvNG3wT3aDh9n7GpyQcA
+  https://podcasts.apple.com/ca/podcast/so-youve-started-steaming-now-what-getting-over-stream/id1509473966?i=1000472290807
 ---
