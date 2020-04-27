@@ -34,7 +34,7 @@ const Description = styled.p`
 `
 
 const Where = styled.div`
-  margin-bottom: 50px;
+  margin-bottom: 80px;
   text-align: center;
 `
 
@@ -92,11 +92,13 @@ const AnchorEmbed = styled.iframe`
 `
 
 const Share = styled.div`
-  margin-bottom: 20px;
+  margin-bottom: 80px;
+  text-align: center;
 `
 
 const Reaction = styled.div`
   margin-bottom: 100px;
+  text-align: center;
 `
 
 export const BlogPostTemplate = ({
@@ -169,9 +171,11 @@ export const BlogPostTemplate = ({
         </Where>
 
         <Share>
+          <Title>Share</Title>
           <div className="sharethis-inline-share-buttons"></div>
         </Share>
         <Reaction>
+          <Title>React</Title>
           <div className="sharethis-inline-reaction-buttons"></div>
         </Reaction>
       </div>
