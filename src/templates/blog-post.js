@@ -213,6 +213,7 @@ const BlogPost = ({ data }) => {
             <meta name="twitter:description" content={post.frontmatter.description} />
             <meta name="twitter:image" content={`https://hotfixpodcast.com${post.frontmatter.thumbnailimage.childImageSharp.resize.src}`} />
             <meta name="twitter:card" content="summary_large_image" />
+            <script type='text/javascript' src='https://platform-api.sharethis.com/js/sharethis.js#property=5ea727b67ddbf2001271a272&product=inline-share-buttons' async='async'></script>
           </Helmet>
         }
         title={post.frontmatter.title}
