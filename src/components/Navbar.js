@@ -14,6 +14,20 @@ const Nav = styled.nav`
     display: inline-block;
     text-transform: uppercase;
     font-weight: 700;
+    margin-right: 10px;
+    margin-left: 20px;
+
+    &.cta {
+      border-radius: 3px;
+      border: 1px solid white;
+      padding: 6px 10px;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+      transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+      &:hover {
+        background: #000;
+        box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+      }
+    }
   }
 `
 
@@ -37,8 +51,9 @@ const Navbar = class extends React.Component {
               <Link to='/'><img src={logo} width="130px" /></Link>
             </div>
             <div>
-              <Link to='/'>Home</Link>
+              {/* <Link to='/'>Home</Link> */}
               {/* <Link to='/about' style={{ marginLeft: '20px', marginRight: '10px' }}>About</Link> */}
+              <a className='cta' href="https://podcasts.apple.com/ca/podcast/hotfix/id1509473966" target="_blank">Leave a Review</a>
             </div>
           </Nav>
         </Headroom>
