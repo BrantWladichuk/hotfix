@@ -15,5 +15,5 @@ anchor_embed: >-
 spotify_link: >-
   https://open.spotify.com/episode/5Av7j3FOpVav2VyJKpQKMr?si=4p8MP0zxRPenH98gsYDVIw
 apple_podcasts_link: >-
-  https://open.spotify.com/episode/5Av7j3FOpVav2VyJKpQKMr?si=4p8MP0zxRPenH98gsYDVIw
+  https://podcasts.apple.com/ca/podcast/halo-infinite-couch-co-op/id1509473966?i=1000474239246
 ---
