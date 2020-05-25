@@ -13,5 +13,5 @@ anchor_embed: >-
 spotify_link: >-
   https://open.spotify.com/episode/19HHwbDUL29eaWsxgniia5?si=N7AN2I1DRM6NtF-rV8aQ7g
 apple_podcasts_link: >-
-  https://open.spotify.com/episode/19HHwbDUL29eaWsxgniia5?si=N7AN2I1DRM6NtF-rV8aQ7g
+  https://podcasts.apple.com/ca/podcast/the-battle-royale-episode/id1509473966?i=1000475711838
 ---
