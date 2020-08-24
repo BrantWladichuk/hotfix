@@ -16,6 +16,5 @@ anchor_embed: >-
   https://anchor.fm/hotfix/embed/episodes/Interview-with-Glimesh-founder-Luke-Strickland-eiion6/a-a318h8p
 spotify_link: >-
   https://open.spotify.com/episode/2rflIhD6wws4wNH8wY4vud?si=f45OUrv-TqmvWHH1ihOJ4w
-apple_podcasts_link: >-
-  https://open.spotify.com/episode/2rflIhD6wws4wNH8wY4vud?si=f45OUrv-TqmvWHH1ihOJ4w
+apple_podcasts_link: 'https://podcasts.apple.com/ca/podcast/hotfix/id1509473966'
 ---
